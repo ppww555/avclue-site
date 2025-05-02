@@ -67,14 +67,34 @@ description: 'All-metal PTZ controllers compatible with ATEM & Companion'
     </script>
   </head>
   <body>
-    <h2 style="text-align:right;">AVCLUE - Professional Video Control Provider</h2>
-    <p style="text-align:right;">-Peter Wang</p>
+    <style>
+      @keyframes shine {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+    </style>
+    <h2 style="
+      text-align: right;
+      background: linear-gradient(90deg, #007ACC, #00C1FF, #007ACC);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: shine 3s linear infinite;
+    ">
+      AVCLUE - Professional Video Control Provider
+    </h2>
+    <p style="text-align:right;"></p>
 
     <h1 style="text-align:left;">🚀 Control Panel - KD50B </h1>
     <p>We specialize in building multi-protocol control devices compatible with ATEM and Companion systems.</p>
 
     <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
-      <img src="/images/kd50b.jpg" alt="KD50B Controller" style="max-width: 50%; height: auto; border-radius: 8px;" />
+      <div style="flex: 1;">
+        <img id="carousel-image" src="/images/kd50b-1.jpg" alt="KD50B Controller" style="max-width: 100%; height: auto; border-radius: 8px;" />
+      </div>
       <div>
         <h2> Key Advantages</h2>
         <ul>
@@ -84,6 +104,18 @@ description: 'All-metal PTZ controllers compatible with ATEM & Companion'
         </ul>
       </div>
     </div>
+    <script>
+      const images = [
+        "/images/kd50b-1.jpg",
+        "/images/kd50b-2.jpg",
+        "/images/kd50b-3.jpg"
+      ];
+      let current = 0;
+      setInterval(() => {
+        current = (current + 1) % images.length;
+        document.getElementById("carousel-image").src = images[current];
+      }, 3000);
+    </script>
 
     <h2>🎥 Product Demo</h2>
     <div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 1rem;">
@@ -97,6 +129,13 @@ description: 'All-metal PTZ controllers compatible with ATEM & Companion'
     </div>
 
     <div style="text-align: center; margin: 2rem 0;">
+      <style>
+        @keyframes confetti {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+      </style>
+
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_xclick">
         <input type="hidden" name="business" value="securitynetservice@gmail.com">
@@ -104,7 +143,8 @@ description: 'All-metal PTZ controllers compatible with ATEM & Companion'
         <input type="hidden" name="amount" value="999.00">
         <input type="hidden" name="currency_code" value="USD">
         <button type="submit" style="
-          background-color: #ffc439;
+          background: linear-gradient(270deg, #f6d365, #fda085, #f6d365);
+          background-size: 400% 400%;
           color: #000;
           font-size: 1rem;
           padding: 0.75rem 1.5rem;
@@ -112,7 +152,20 @@ description: 'All-metal PTZ controllers compatible with ATEM & Companion'
           border-radius: 5px;
           cursor: pointer;
           font-weight: bold;
-        ">
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        "
+        onmouseover="
+          this.style.animation='confetti 1s linear infinite';
+          this.style.transform='scale(1.05)';
+          this.style.boxShadow='0 6px 16px rgba(0, 0, 0, 0.2)';
+        "
+        onmouseout="
+          this.style.animation='none';
+          this.style.transform='scale(1)';
+          this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';
+        "
+        >
           Pay Now via PayPal
         </button>
         <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;">You will be redirected to PayPal to complete your purchase.</p>
@@ -124,12 +177,35 @@ description: 'All-metal PTZ controllers compatible with ATEM & Companion'
       <div class="contact-box" style="flex: 1; background: transparent;">
         <p>
           Contact: Peter<br />
-          WeChat: amanas<br />
+          WeChat: <a href="#" onclick="
+            const qr = document.getElementById('wechat-qr');
+            if (qr.style.display === 'block') {
+              qr.style.opacity = 0;
+              setTimeout(() => qr.style.display = 'none', 300);
+            } else {
+              qr.style.display = 'block';
+              setTimeout(() => qr.style.opacity = 1, 10);
+            }
+            return false;">amanas</a><br />
+          <img id="wechat-qr" src="/images/wechat-qr.jpg" alt="WeChat QR" width="140"
+               style="display: none; margin-top: 0.5rem; opacity: 0; transition: opacity 0.3s ease;"
+               onclick="this.style.display='none'; this.style.opacity=0;" />
           WhatsApp: <a href="https://wa.me/8618503057003" target="_blank">+86-18503057003</a><br />
           Email: <a href="mailto:avclue@gmail.com?subject=New%20Order">avclue@gmail.com</a><br />
           YouTube: <a href="https://www.youtube.com/@avclue" target="_blank">youtube.com/@avclue</a><br />
         </p>
       </div>
     </div>
-  </body>
+</body>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const payBtn = document.querySelector('form button[type="submit"]');
+    payBtn.addEventListener('mouseenter', () => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    });
+  </script>
 </html>
