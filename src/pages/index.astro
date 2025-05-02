@@ -1,11 +1,135 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+title: 'AVCLUE - Professional Video Control Gear'
+description: 'All-metal PTZ controllers compatible with ATEM & Companion'
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AVCLUE - Professional Video Control Gear</title>
+    <style>
+      body {
+        font-family: Calibri, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        color: #111;
+      }
+
+      img {
+        display: block;
+        margin: 2rem auto;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      h1, h2 {
+        margin-top: 2rem;
+        color: #222;
+      }
+
+      h1 {
+        font-size: 2rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+        text-align: center;
+        font-weight: bold;
+        color: #000;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        padding-left: 1.2rem;
+      }
+
+      .contact-box {
+        margin-top: 2rem;
+        background: #f9f9f9;
+        padding: 1rem;
+        border-left: 4px solid #007ACC;
+        font-size: 0.95rem;
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EVQ7XG7W9C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-EVQ7XG7W9C');
+    </script>
+  </head>
+  <body>
+    <h2 style="text-align:right;">AVCLUE - Professional Video Control Provider</h2>
+    <p style="text-align:right;">-Peter Wang</p>
+
+    <h1 style="text-align:left;">🚀 Control Panel - KD50B </h1>
+    <p>We specialize in building multi-protocol control devices compatible with ATEM and Companion systems.</p>
+
+    <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
+      <img src="/images/kd50b.jpg" alt="KD50B Controller" style="max-width: 50%; height: auto; border-radius: 8px;" />
+      <div>
+        <h2> Key Advantages</h2>
+        <ul>
+          <li>Native support for both ATEM and Companion</li>
+          <li>LED T-Bar, tri-color buttons, and customizable knobs</li>
+          <li>Full aluminum body with industrial-grade I/O</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>🎥 Product Demo</h2>
+    <div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 1rem;">
+      <div style="flex: 1; text-align: center;">
+        <iframe width="500" height="300" src="https://www.youtube.com/embed/IKkxBD5Ig64" title="KD50B Demo Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div style="flex: 1; padding-left: 2rem;">
+        <h2 style="margin-top: 0;"> Ideal For</h2>
+        <p>🎥 Church streaming<br />🧑‍🏫 Education recording<br />🎬 Compact studios<br />🎧 Online webinars</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="securitynetservice@gmail.com">
+        <input type="hidden" name="item_name" value="KD50B Control Panel">
+        <input type="hidden" name="amount" value="999.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <button type="submit" style="
+          background-color: #ffc439;
+          color: #000;
+          font-size: 1rem;
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+        ">
+          Pay Now via PayPal
+        </button>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;">You will be redirected to PayPal to complete your purchase.</p>
+      </form>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 2rem; margin-top: 2rem; background: #f9f9f9; padding: 1rem;">
+      <h2 style="margin: 0; white-space: nowrap;">☎️ Contact Us</h2>
+      <div class="contact-box" style="flex: 1; background: transparent;">
+        <p>
+          Contact: Peter<br />
+          WeChat: amanas<br />
+          WhatsApp: +86-18503057003<br />
+          Email: <a href="mailto:avclue@gmail.com?subject=New%20Order">avclue@gmail.com</a><br />
+          YouTube: <a href="https://www.youtube.com/@avclue" target="_blank">youtube.com/@avclue</a><br />
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
