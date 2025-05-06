@@ -8,204 +8,311 @@ description: 'All-metal PTZ controllers compatible with ATEM & Companion'
   <head>
     <meta charset="UTF-8" />
     <title>AVCLUE - Professional Video Control Gear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
     <style>
       body {
-        font-family: Calibri, sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        color: #111;
+        font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
       }
-
-      img {
-        display: block;
-        margin: 2rem auto;
-        max-width: 100%;
-        border-radius: 8px;
+      a.button {
+        background-color: #6D28D9;
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 2px 8px rgba(109, 40, 217, 0.3);
+        transition: background 0.3s, transform 0.2s;
       }
-
-      h1, h2 {
-        margin-top: 2rem;
-        color: #222;
+      a.button:hover {
+        background-color: #5B21B6;
+        transform: translateY(-2px);
       }
-
-      h1 {
-        font-size: 2rem;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 0.5rem;
-        text-align: center;
-        font-weight: bold;
-        color: #000;
+      header a:hover {
+        color: #3182CE;
       }
-
-      h2 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
+      .nav-item {
+        position: relative;
       }
-
-      ul {
-        padding-left: 1.2rem;
+      .nav-item .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #1A1F36;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        gap: 1rem;
+        white-space: nowrap;
+        z-index: 999;
       }
-
-      .contact-box {
-        margin-top: 2rem;
-        background: #f9f9f9;
-        padding: 1rem;
-        border-left: 4px solid #007ACC;
+      .nav-item:hover .dropdown {
+        display: flex;
+      }
+      .nav-item .dropdown a {
+        font-family: 'Inter', 'Roboto', sans-serif;
         font-size: 0.95rem;
+        color: #E2E8F0;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+      .nav-item .dropdown a:hover {
+        background-color: #2D3748;
       }
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EVQ7XG7W9C"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-EVQ7XG7W9C');
-    </script>
   </head>
-  <body>
-    <style>
-      @keyframes shine {
-        0% { background-position: -200% center; }
-        100% { background-position: 200% center; }
-      }
-    </style>
-    <h2 style="
-      text-align: right;
-      background: linear-gradient(90deg, #007ACC, #00C1FF, #007ACC);
-      background-size: 200% auto;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      animation: shine 3s linear infinite;
-    ">
-      AVCLUE - Professional Video Control Provider
-    </h2>
-    <p style="text-align:right;"></p>
+  <body style="margin: 0; font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;">
+    <header style="background-color: #1A1F36; height: 64px; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; z-index: 1000;">
+      <a href="/" style="font-size: 1.4rem; font-weight: bold; color: white; text-decoration: none;">AVCLUE</a>
+      <nav style="display: flex; gap: 1.5rem; align-items: center; padding: 0 1rem; transform: translateX(-300px);">
+        <div class="nav-item">
+          <a href="#" style="color: #CBD5E0; text-decoration: none; font-weight: 500; transition: background 0.3s;" onmouseover="this.style.background='linear-gradient(to right, #667eea, #764ba2)'; this.style.borderRadius='6px'; this.style.padding='0.25rem 0.75rem'" onmouseout="this.style.background='none'; this.style.padding='0';">Products ▾</a>
+          <div class="dropdown">
+            <a href="#kd50b-details">KD50B</a>
+            <a href="#kd50x-details">KD50X</a>
+            <a href="#kd60a-details">KD60A</a>
+            <a href="#kd60b-details">KD60B</a>
+          </div>
+        </div>
+        <a href="#integrations" onclick="document.getElementById('integrations').scrollIntoView({ behavior: 'smooth' })" style="color: #CBD5E0; text-decoration: none; font-weight: 500; transition: background 0.3s;" onmouseover="this.style.background='linear-gradient(to right, #667eea, #764ba2)'; this.style.borderRadius='6px'; this.style.padding='0.25rem 0.75rem'" onmouseout="this.style.background='none'; this.style.padding='0';">Integrations</a>
+        <a href="https://www.youtube.com/@avclue" target="_blank" rel="noopener noreferrer" style="color: #CBD5E0; text-decoration: none; font-weight: 500; transition: background 0.3s;" onmouseover="this.style.background='linear-gradient(to right, #667eea, #764ba2)'; this.style.borderRadius='6px'; this.style.padding='0.25rem 0.75rem'" onmouseout="this.style.background='none'; this.style.padding='0';">Resources</a>
+        <a href="#footer" onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' })" style="color: #CBD5E0; text-decoration: none; font-weight: 500; transition: background 0.3s;" onmouseover="this.style.background='linear-gradient(to right, #667eea, #764ba2)'; this.style.borderRadius='6px'; this.style.padding='0.25rem 0.75rem'" onmouseout="this.style.background='none'; this.style.padding='0';">Where to Buy</a>
+      </nav>
+    </header>
+    <div style="height: 64px;"></div>
 
-    <h1 style="text-align:left;">🚀 Control Panel - KD50B </h1>
-    <p>We specialize in building multi-protocol control devices compatible with ATEM and Companion systems.</p>
+    <section style="text-align: center; padding: 5rem 2rem; background: linear-gradient(135deg, #4f46e5, #6d28d9); color: #fff;">
+      <h1 style="font-size: 3rem; margin-bottom: 1rem; font-weight: 600;">Professional Broadcast Controllers from AVCLUE</h1>
+      <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; color: #e2e8f0; font-family: 'Quicksand', sans-serif;">Versatile video control panels engineered for seamless integration with ATEM and Companion systems. Ideal for live production in churches, studios, and corporate environments.</p>
+    </section>
 
-    <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
-      <div style="flex: 1;">
-        <img id="carousel-image" src="/images/kd50b-1.jpg" alt="KD50B Controller" style="max-width: 100%; height: auto; border-radius: 8px;" />
+    <section style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; padding: 3rem 1rem; background: #fff;">
+      <div style="width: 300px; height: 440px; border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center; transition: box-shadow 0.3s; box-shadow: 0 0 0 rgba(0,0,0,0); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='0 0 0 rgba(0,0,0,0)'">
+        <img src="/images/kd50b.png" alt="KD50B" style="max-width: 100%; border-radius: 8px;">
+        <h2>KD50B</h2>
+        <p>KD50B is a compact yet powerful controller featuring 52 customizable keys, LED T-Bar, and tricolor backlit buttons. Native support for ATEM and Companion makes it ideal for portable or fixed control setups.</p>
+        <div style="flex-grow: 1;"></div>
+        <div style="display: flex; justify-content: center; align-items: end; height: 60px;">
+          <a href="#kd50b-details" class="button">View Product</a>
+        </div>
       </div>
-      <div>
-        <h2> Key Advantages</h2>
-        <ul>
-          <li>Native support for both ATEM and Companion</li>
-          <li>LED T-Bar, tri-color buttons, and customizable knobs</li>
-          <li>Full aluminum body with industrial-grade I/O</li>
+
+      <div style="width: 300px; height: 440px; border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center; transition: box-shadow 0.3s; box-shadow: 0 0 0 rgba(0,0,0,0); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='0 0 0 rgba(0,0,0,0)'">
+        <img src="/images/kd50x.png" alt="KD50X" style="max-width: 100%; border-radius: 8px;">
+        <h2>KD50X</h2>
+        <p>KD50X expands upon the KD50B with a built-in OLED display and advanced Companion profile support. Designed for scenarios requiring clear feedback and rapid setup switching.</p>
+        <div style="flex-grow: 1;"></div>
+        <div style="display: flex; justify-content: center; align-items: end; height: 60px;">
+          <a href="#kd50x-details" class="button">View Product</a>
+        </div>
+      </div>
+
+      <div style="width: 300px; height: 440px; border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center; transition: box-shadow 0.3s; box-shadow: 0 0 0 rgba(0,0,0,0); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='0 0 0 rgba(0,0,0,0)'">
+        <img src="/images/kd60a.png" alt="KD60A" style="max-width: 100%; border-radius: 8px;">
+        <h2>KD60A</h2>
+        <p>KD60A features dual-channel switching and enhanced hardware control, making it the perfect choice for livestreaming, hybrid events, and remote classrooms where stability and quick operation matter.</p>
+        <div style="flex-grow: 1;"></div>
+        <div style="display: flex; justify-content: center; align-items: end; height: 60px;">
+          <a href="#kd60a-details" class="button">View Product</a>
+        </div>
+      </div>
+
+      <div style="width: 300px; height: 440px; border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center; transition: box-shadow 0.3s; box-shadow: 0 0 0 rgba(0,0,0,0); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='0 0 0 rgba(0,0,0,0)'">
+        <img src="/images/kd60a.png" alt="KD60B" style="max-width: 100%; border-radius: 8px;">
+        <h2>KD60B</h2>
+        <p>KD60B is our flagship switcher control panel offering native PTZ control, dual-channel switching, and full Companion integration. Engineered for professional studios, hybrid events, and multi-camera production.</p>
+        <div style="flex-grow: 1;"></div>
+        <div style="display: flex; justify-content: center; align-items: end; height: 60px;">
+          <a href="#kd60b-details" class="button">View Product</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- KD50B Details Section -->
+    <section id="kd50b-details" style="background: #f8fafc; padding: 4rem 1rem 3rem 1rem;">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; justify-content: space-between;">
+          <!-- Left: Title and Image -->
+          <div style="flex: 1 1 320px; min-width: 280px; display: flex; flex-direction: column; align-items: flex-start;">
+            <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; background: linear-gradient(90deg, #6D28D9 20%, #4f46e5 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">KD50B</h2>
+            <img src="/images/kd50b.png" alt="KD50B Controller" style="max-width: 340px; width: 100%; border-radius: 10px; box-shadow: 0 4px 16px rgba(80,64,160,0.11); margin: 1.5rem 0;">
+          </div>
+          <!-- Middle: Key Advantages -->
+          <div style="flex: 1 1 260px; min-width: 240px; margin-top: 0.5rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #6D28D9;">Key Advantages</h3>
+            <ul style="font-size: 1.08rem; color: #222; line-height: 1.7; padding-left: 1.2em; margin: 0; list-style: disc;">
+              <li>Native support for both ATEM and Companion</li>
+              <li>LED T-Bar, tri-color buttons, and customizable knobs</li>
+              <li>Full aluminum body with industrial-grade I/O</li>
+            </ul>
+          </div>
+          <!-- Right: Video and Purchase -->
+          <div style="flex: 1 1 340px; min-width: 290px; display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="width: 100%; max-width: 370px;">
+              <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(80,64,160,0.09); margin-bottom: 1.1rem;">
+                <iframe src="https://www.youtube.com/embed/IKkxBD5Ig64" title="KD50B Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+              </div>
+            </div>
+          <div style="margin-top: 0.5rem; width: 100%;">
+            <p style="font-size: 1.2rem; color: #333; margin: 0 0 0.5rem 0;"><strong>Price: $999</strong></p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="width: 100%; margin-top: 0.5rem; display: flex; justify-content: center;">
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="9XKZL8BEVGBTU" />
+              <input type="hidden" name="currency_code" value="USD" />
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="有了PayPal，您可以更安全便捷地在线付款！" alt="立即购买" />
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kd50x-details" style="background: #f1f5f9; padding: 4rem 1rem 3rem 1rem;">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; justify-content: space-between;">
+          <!-- Left: Title and Image -->
+          <div style="flex: 1 1 320px; min-width: 280px; display: flex; flex-direction: column; align-items: flex-start;">
+            <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; background: linear-gradient(90deg, #6D28D9 20%, #4f46e5 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">KD50X</h2>
+            <img src="/images/kd50x.png" alt="KD50X Controller" style="max-width: 340px; width: 100%; border-radius: 10px; box-shadow: 0 4px 16px rgba(80,64,160,0.11); margin: 1.5rem 0;">
+          </div>
+          <!-- Middle: Key Advantages -->
+          <div style="flex: 1 1 260px; min-width: 240px; margin-top: 0.5rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #6D28D9;">Key Advantages</h3>
+            <ul style="font-size: 1.08rem; color: #222; line-height: 1.7; padding-left: 1.2em; margin: 0; list-style: disc;">
+              <li>OLED display for real-time feedback</li>
+              <li>Multiple Companion profiles with fast switching</li>
+              <li>Durable aluminum enclosure</li>
+            </ul>
+          </div>
+          <!-- Right: Video and Purchase -->
+          <div style="flex: 1 1 340px; min-width: 290px; display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="width: 100%; max-width: 370px;">
+              <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(80,64,160,0.09); margin-bottom: 1.1rem;">
+                <iframe src="https://www.youtube.com/embed/n4A95gcT-B0?si=IxDO8b-yiN_c_7Nd" title="KD50X Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; width: 100%;">
+              <p style="font-size: 1.2rem; color: #333; margin: 0 0 0.5rem 0;"><strong>Price: $999</strong></p>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="width: 100%; margin-top: 0.5rem; display: flex; justify-content: center;">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="9XKZL8BEVGBTU" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="有了PayPal，您可以更安全便捷地在线付款！" alt="立即购买" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KD60A Details Section -->
+    <section id="kd60a-details" style="background: #f8fafc; padding: 4rem 1rem 3rem 1rem;">
+      <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; justify-content: space-between;">
+          <!-- Left: Title and Image -->
+          <div style="flex: 1 1 320px; min-width: 280px; display: flex; flex-direction: column; align-items: flex-start;">
+            <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; background: linear-gradient(90deg, #6D28D9 20%, #4f46e5 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">KD60A</h2>
+            <img src="/images/kd60a.png" alt="KD60A Controller" style="max-width: 340px; width: 100%; border-radius: 10px; box-shadow: 0 4px 16px rgba(80,64,160,0.11); margin: 1.5rem 0;">
+          </div>
+          <!-- Middle: Key Advantages -->
+          <div style="flex: 1 1 260px; min-width: 240px; margin-top: 0.5rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #6D28D9;">Key Advantages</h3>
+            <ul style="font-size: 1.08rem; color: #222; line-height: 1.7; padding-left: 1.2em; margin: 0; list-style: disc;">
+              <li>Dual-channel switching for advanced routing</li>
+              <li>Robust ATEM integration</li>
+              <li>Ideal for livestreaming & hybrid events</li>
+            </ul>
+          </div>
+          <!-- Right: Video and Purchase -->
+          <div style="flex: 1 1 340px; min-width: 290px; display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="width: 100%; max-width: 370px;">
+              <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(80,64,160,0.09); margin-bottom: 1.1rem;">
+                <iframe src="https://www.youtube.com/embed/kDJ3o9ZzNIY?si=ci8s0WFtLkfTEq1i" title="KD60A Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; width: 100%;">
+              <p style="font-size: 1.2rem; color: #333; margin: 0 0 0.5rem 0;"><strong>Price: $2999</strong></p>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="width: 100%; margin-top: 0.5rem; display: flex; justify-content: center;">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="PD95AZPZ89XXC" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="Buy Now with PayPal" alt="Buy Now" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- KD60B Details Section -->
+<section id="kd60b-details" style="background: #f1f5f9; padding: 4rem 1rem 3rem 1rem;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; justify-content: space-between;">
+      <!-- Left: Title and Image -->
+      <div style="flex: 1 1 320px; min-width: 280px; display: flex; flex-direction: column; align-items: flex-start;">
+        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; background: linear-gradient(90deg, #6D28D9 20%, #4f46e5 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">KD60B</h2>
+        <img src="/images/kd60a.png" alt="KD60B Controller" style="max-width: 340px; width: 100%; border-radius: 10px; box-shadow: 0 4px 16px rgba(80,64,160,0.11); margin: 1.5rem 0;">
+      </div>
+      <!-- Middle: Key Advantages -->
+      <div style="flex: 1 1 260px; min-width: 240px; margin-top: 0.5rem;">
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #6D28D9;">Key Advantages</h3>
+        <ul style="font-size: 1.08rem; color: #222; line-height: 1.7; padding-left: 1.2em; margin: 0; list-style: disc;">
+          <li>Native PTZ control integration</li>
+          <li>Advanced Companion profile support</li>
+          <li>Ideal for professional studios and multi-cam productions</li>
         </ul>
       </div>
-    </div>
-    <script>
-      const images = [
-        "/images/kd50b-1.jpg",
-        "/images/kd50b-2.jpg",
-        "/images/kd50b-3.jpg"
-      ];
-      let current = 0;
-      setInterval(() => {
-        current = (current + 1) % images.length;
-        document.getElementById("carousel-image").src = images[current];
-      }, 3000);
-    </script>
-
-    <h2>🎥 Product Demo</h2>
-    <div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 1rem;">
-      <div style="flex: 1; text-align: center;">
-        <iframe width="500" height="300" src="https://www.youtube.com/embed/IKkxBD5Ig64" title="KD50B Demo Video" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div style="flex: 1; padding-left: 2rem;">
-        <h2 style="margin-top: 0;"> Ideal For</h2>
-        <p>🎥 Church streaming<br />🧑‍🏫 Education recording<br />🎬 Compact studios<br />🎧 Online webinars</p>
+      <!-- Right: Video and Purchase -->
+      <div style="flex: 1 1 340px; min-width: 290px; display: flex; flex-direction: column; align-items: flex-start;">
+        <div style="width: 100%; max-width: 370px;">
+          <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(80,64,160,0.09); margin-bottom: 1.1rem;">
+            <iframe src="https://www.youtube.com/embed/kDJ3o9ZzNIY?si=ci8s0WFtLkfTEq1i" title="KD60B Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+          </div>
+        </div>
+        <div style="margin-top: 0.5rem; width: 100%;">
+          <p style="font-size: 1.2rem; color: #333; margin: 0 0 0.5rem 0;"><strong>Price: $2999</strong></p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="width: 100%; margin-top: 0.5rem; display: flex; justify-content: center;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="PD95AZPZ89XXC" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="Buy Now with PayPal" alt="Buy Now" />
+          </form>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div style="text-align: center; margin: 2rem 0;">
-      <style>
-        @keyframes confetti {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 200% 50%; }
-        }
-      </style>
-
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="securitynetservice@gmail.com">
-        <input type="hidden" name="item_name" value="KD50B Control Panel">
-        <input type="hidden" name="amount" value="999.00">
-        <input type="hidden" name="currency_code" value="USD">
-        <button type="submit" style="
-          background: linear-gradient(270deg, #f6d365, #fda085, #f6d365);
-          background-size: 400% 400%;
-          color: #000;
-          font-size: 1rem;
-          padding: 0.75rem 1.5rem;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-weight: bold;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-        "
-        onmouseover="
-          this.style.animation='confetti 1s linear infinite';
-          this.style.transform='scale(1.05)';
-          this.style.boxShadow='0 6px 16px rgba(0, 0, 0, 0.2)';
-        "
-        onmouseout="
-          this.style.animation='none';
-          this.style.transform='scale(1)';
-          this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';
-        "
-        >
-          Pay Now via PayPal
-        </button>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;">You will be redirected to PayPal to complete your purchase.</p>
-      </form>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 2rem; margin-top: 2rem; background: #f9f9f9; padding: 1rem;">
-      <h2 style="margin: 0; white-space: nowrap;">☎️ Contact Us</h2>
-      <div class="contact-box" style="flex: 1; background: transparent;">
-        <p>
-          Contact: Peter<br />
-          WeChat: <a href="#" onclick="
-            const qr = document.getElementById('wechat-qr');
-            if (qr.style.display === 'block') {
-              qr.style.opacity = 0;
-              setTimeout(() => qr.style.display = 'none', 300);
-            } else {
-              qr.style.display = 'block';
-              setTimeout(() => qr.style.opacity = 1, 10);
-            }
-            return false;">amanas</a><br />
-          <img id="wechat-qr" src="/images/wechat-qr.jpg" alt="WeChat QR" width="140"
-               style="display: none; margin-top: 0.5rem; opacity: 0; transition: opacity 0.3s ease;"
-               onclick="this.style.display='none'; this.style.opacity=0;" />
-          WhatsApp: <a href="https://wa.me/8618503057003" target="_blank">+86-18503057003</a><br />
-          Email: <a href="mailto:avclue@gmail.com?subject=New%20Order">avclue@gmail.com</a><br />
-          YouTube: <a href="https://www.youtube.com/@avclue" target="_blank">youtube.com/@avclue</a><br />
-        </p>
+    <section id="integrations" style="background-color: #f9fafb; padding: 3rem 1rem;">
+      <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem; color: #1A202C;">Integrated With</h2>
+        <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+          <a href="https://bitfocus.io/companion" target="_blank" rel="noopener" style="display: flex; align-items: center;">
+            <img src="/images/logos/companion.png" alt="Companion Logo" style="height: 48px;">
+          </a>
+          <a href="https://www.blackmagicdesign.com/products/atem" target="_blank" rel="noopener" style="display: flex; align-items: center;">
+            <img src="/images/logos/atem.png" alt="ATEM Logo" style="height: 48px;">
+          </a>
+          <a href="https://www.vmix.com/" target="_blank" rel="noopener" style="display: flex; align-items: center;">
+            <img src="/images/logos/vmix.png" alt="vMix Logo" style="height: 48px;">
+          </a>
+          <a href="https://obsproject.com/" target="_blank" rel="noopener" style="display: flex; align-items: center;">
+            <img src="/images/logos/obs.png" alt="OBS Logo" style="height: 48px;">
+          </a>
+          <a href="https://www.telestream.net/wirecast/" target="_blank" rel="noopener" style="display: flex; align-items: center;">
+            <img src="/images/logos/wirecast.png" alt="Wirecast Logo" style="height: 48px;">
+          </a>
+        </div>
       </div>
-    </div>
-</body>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    const payBtn = document.querySelector('form button[type="submit"]');
-    payBtn.addEventListener('mouseenter', () => {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-    });
-  </script>
+    </section>
+
+    <footer id="footer" style="background: #f5f5f5; padding: 2rem; text-align: center; font-size: 0.9rem; color: #555;">
+      <p>Contact: avclue@gmail.com | WhatsApp: +86-18503057003</p>
+      <p>© 2025 AVCLUE. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
